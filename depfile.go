@@ -5,6 +5,7 @@ type DepFile struct {
 	Filenames       []string         `json:"filenames,omitempty"` // supported filenames
 	Patterns        []string         `json:"patterns,omitempty"`  // patterns of supported filenames
 	URL             string           `json:"url,omitempty"`       // documentation URL if any
+	PackageType     string           `json:"package_type"`        // one of npm, pypi, etc.
 	PackageManagers []PackageManager `json:"package_managers"`    // package managers capable of processing the file
 }
 

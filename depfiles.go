@@ -1,5 +1,14 @@
 package depfile
 
+const (
+	pkgTypeGem       = "gem"
+	pkgTypePackagist = "packagist"
+	pkgTypePypi      = "pypi"
+	pkgTypeNpm       = "npm"
+	pkgTypeBower     = "bower"
+	pkgTypeMaven     = "maven"
+)
+
 var (
 	pmMaven    = PackageManager{Name: "Maven", URL: "http://maven.apache.org"}
 	pmBundler  = PackageManager{Name: "Bundler", URL: "http://bundler.io"}
@@ -19,7 +28,8 @@ var DepFiles = []DepFile{
 		Filenames: []string{
 			"pom.xml",
 		},
-		URL: "http://maven.apache.org/pom.html",
+		URL:         "http://maven.apache.org/pom.html",
+		PackageType: pkgTypeMaven,
 		PackageManagers: []PackageManager{
 			pmMaven,
 		},
@@ -31,6 +41,7 @@ var DepFiles = []DepFile{
 			"maven-dependencies.json",
 			"gemnasium-maven-plugin.json",
 		},
+		PackageType: pkgTypeMaven,
 		PackageManagers: []PackageManager{
 			pmMaven,
 		},
@@ -43,7 +54,8 @@ var DepFiles = []DepFile{
 			"Gemfile",
 			"gems.rb",
 		},
-		URL: "http://bundler.io/man/gemfile.5.html",
+		URL:         "http://bundler.io/man/gemfile.5.html",
+		PackageType: pkgTypeGem,
 		PackageManagers: []PackageManager{
 			pmBundler,
 		},
@@ -55,6 +67,7 @@ var DepFiles = []DepFile{
 			"Gemfile.lock",
 			"gems.locked",
 		},
+		PackageType: pkgTypeGem,
 		PackageManagers: []PackageManager{
 			pmBundler,
 		},
@@ -65,7 +78,8 @@ var DepFiles = []DepFile{
 		Patterns: []string{
 			`\.gemspec$`,
 		},
-		URL: "http://guides.rubygems.org/specification-reference/",
+		URL:         "http://guides.rubygems.org/specification-reference/",
+		PackageType: pkgTypeGem,
 		PackageManagers: []PackageManager{
 			pmGem,
 		},
@@ -77,7 +91,8 @@ var DepFiles = []DepFile{
 		Filenames: []string{
 			"package.json",
 		},
-		URL: "https://docs.npmjs.com/files/package.json",
+		URL:         "https://docs.npmjs.com/files/package.json",
+		PackageType: pkgTypeNpm,
 		PackageManagers: []PackageManager{
 			pmNpm,
 			pmYarn,
@@ -89,7 +104,8 @@ var DepFiles = []DepFile{
 		Filenames: []string{
 			"npm-shrinkwrap.json",
 		},
-		URL: "https://docs.npmjs.com/files/shrinkwrap.json",
+		URL:         "https://docs.npmjs.com/files/shrinkwrap.json",
+		PackageType: pkgTypeNpm,
 		PackageManagers: []PackageManager{
 			pmNpm,
 		},
@@ -100,7 +116,8 @@ var DepFiles = []DepFile{
 		Filenames: []string{
 			"package-lock.json",
 		},
-		URL: "https://docs.npmjs.com/files/package-lock.json",
+		URL:         "https://docs.npmjs.com/files/package-lock.json",
+		PackageType: pkgTypeNpm,
 		PackageManagers: []PackageManager{
 			pmNpm,
 		},
@@ -111,7 +128,8 @@ var DepFiles = []DepFile{
 		Filenames: []string{
 			"yarn.lock",
 		},
-		URL: "https://yarnpkg.com/lang/en/docs/yarn-lock/",
+		URL:         "https://yarnpkg.com/lang/en/docs/yarn-lock/",
+		PackageType: pkgTypeNpm,
 		PackageManagers: []PackageManager{
 			pmYarn,
 		},
@@ -123,7 +141,8 @@ var DepFiles = []DepFile{
 		Filenames: []string{
 			"bower.json",
 		},
-		URL: "https://github.com/bower/spec/blob/master/json.md#name",
+		URL:         "https://github.com/bower/spec/blob/master/json.md#name",
+		PackageType: pkgTypeBower,
 		PackageManagers: []PackageManager{
 			pmBower,
 		},
@@ -135,7 +154,8 @@ var DepFiles = []DepFile{
 		Filenames: []string{
 			"composer.json",
 		},
-		URL: "https://getcomposer.org/doc/04-schema.md",
+		URL:         "https://getcomposer.org/doc/04-schema.md",
+		PackageType: pkgTypePackagist,
 		PackageManagers: []PackageManager{
 			pmComposer,
 		},
@@ -146,6 +166,7 @@ var DepFiles = []DepFile{
 		Filenames: []string{
 			"composer.lock",
 		},
+		PackageType: pkgTypePackagist,
 		PackageManagers: []PackageManager{
 			pmComposer,
 		},
@@ -162,7 +183,8 @@ var DepFiles = []DepFile{
 		Patterns: []string{
 			`requirements.*\.txt$`,
 		},
-		URL: "https://pip.pypa.io/en/stable/reference/pip_install/#requirements-file-format",
+		URL:         "https://pip.pypa.io/en/stable/reference/pip_install/#requirements-file-format",
+		PackageType: pkgTypePypi,
 		PackageManagers: []PackageManager{
 			pmPip,
 		},

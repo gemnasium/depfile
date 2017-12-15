@@ -13,6 +13,7 @@ var jsonDepFiles string = `[
       "pom.xml"
     ],
     "url": "http://maven.apache.org/pom.html",
+    "package_type": "maven",
     "package_managers": [
       {
         "name": "Maven",
@@ -26,6 +27,7 @@ var jsonDepFiles string = `[
       "maven-dependencies.json",
       "gemnasium-maven-plugin.json"
     ],
+    "package_type": "maven",
     "package_managers": [
       {
         "name": "Maven",
@@ -40,6 +42,7 @@ var jsonDepFiles string = `[
       "gems.rb"
     ],
     "url": "http://bundler.io/man/gemfile.5.html",
+    "package_type": "gem",
     "package_managers": [
       {
         "name": "Bundler",
@@ -53,6 +56,7 @@ var jsonDepFiles string = `[
       "Gemfile.lock",
       "gems.locked"
     ],
+    "package_type": "gem",
     "package_managers": [
       {
         "name": "Bundler",
@@ -66,6 +70,7 @@ var jsonDepFiles string = `[
       "\\.gemspec$"
     ],
     "url": "http://guides.rubygems.org/specification-reference/",
+    "package_type": "gem",
     "package_managers": [
       {
         "name": "gem",
@@ -79,6 +84,7 @@ var jsonDepFiles string = `[
       "package.json"
     ],
     "url": "https://docs.npmjs.com/files/package.json",
+    "package_type": "npm",
     "package_managers": [
       {
         "name": "npm",
@@ -96,6 +102,7 @@ var jsonDepFiles string = `[
       "npm-shrinkwrap.json"
     ],
     "url": "https://docs.npmjs.com/files/shrinkwrap.json",
+    "package_type": "npm",
     "package_managers": [
       {
         "name": "npm",
@@ -109,6 +116,7 @@ var jsonDepFiles string = `[
       "package-lock.json"
     ],
     "url": "https://docs.npmjs.com/files/package-lock.json",
+    "package_type": "npm",
     "package_managers": [
       {
         "name": "npm",
@@ -122,6 +130,7 @@ var jsonDepFiles string = `[
       "yarn.lock"
     ],
     "url": "https://yarnpkg.com/lang/en/docs/yarn-lock/",
+    "package_type": "npm",
     "package_managers": [
       {
         "name": "Yarn",
@@ -135,6 +144,7 @@ var jsonDepFiles string = `[
       "bower.json"
     ],
     "url": "https://github.com/bower/spec/blob/master/json.md#name",
+    "package_type": "bower",
     "package_managers": [
       {
         "name": "Bower",
@@ -148,6 +158,7 @@ var jsonDepFiles string = `[
       "composer.json"
     ],
     "url": "https://getcomposer.org/doc/04-schema.md",
+    "package_type": "packagist",
     "package_managers": [
       {
         "name": "Composer",
@@ -160,6 +171,7 @@ var jsonDepFiles string = `[
     "filenames": [
       "composer.lock"
     ],
+    "package_type": "packagist",
     "package_managers": [
       {
         "name": "Composer",
@@ -178,6 +190,7 @@ var jsonDepFiles string = `[
       "requirements.*\\.txt$"
     ],
     "url": "https://pip.pypa.io/en/stable/reference/pip_install/#requirements-file-format",
+    "package_type": "pypi",
     "package_managers": [
       {
         "name": "pip",
