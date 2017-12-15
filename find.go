@@ -1,10 +1,14 @@
 package depfile
 
-import "regexp"
+import (
+	"path/filepath"
+	"regexp"
+)
 
 var regexps map[string]*regexp.Regexp
 
-func Find(fname string) *DepFile {
+func Find(path string) *DepFile {
+	fname := filepath.Base(path)
 	for _, f := range DepFiles {
 		for _, fn := range f.Filenames {
 			if fname == fn {

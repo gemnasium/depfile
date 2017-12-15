@@ -1,6 +1,9 @@
 package depfile
 
-import "testing"
+import (
+	"path"
+	"testing"
+)
 
 func TestFind(t *testing.T) {
 
@@ -30,6 +33,14 @@ func TestFind(t *testing.T) {
 		for _, fname := range fnames {
 			got := Find(fname)
 			check(fname, fname, got)
+		}
+	})
+
+	t.Run("Subdir", func(t *testing.T) {
+		for _, fname := range fnames {
+			q := path.Join("sub/dir", fname)
+			got := Find(q)
+			check(q, fname, got)
 		}
 	})
 
