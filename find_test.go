@@ -2,8 +2,6 @@ package depfile
 
 import "testing"
 
-// const FilepathRegexpStr = `(requires\.txt|requirements\.txt|requirements\.pip|requirements.*\.txt|package\.json|package-lock\.json|npm-shrinkwrap\.json|composer\.json|composer\.lock|Gemfile|Gemfile\.lock|gems\.rb|gems\.locked|\.gemspec|bower\.json|yarn\.lock|pom\.xml)$`
-
 func TestFind(t *testing.T) {
 
 	t.Run("Canonical", func(t *testing.T) {
