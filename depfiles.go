@@ -25,6 +25,17 @@ var DepFiles = []DepFile{
 		},
 	},
 
+	{
+		Name: "maven-dependencies.json",
+		Filenames: []string{
+			"maven-dependencies.json",
+			"gemnasium-maven-plugin.json",
+		},
+		PackageManagers: []PackageManager{
+			pmMaven,
+		},
+	},
+
 	// ruby
 	{
 		Name: "Gemfile",

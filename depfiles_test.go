@@ -21,6 +21,19 @@ var jsonDepFiles string = `[
     ]
   },
   {
+    "name": "maven-dependencies.json",
+    "filenames": [
+      "maven-dependencies.json",
+      "gemnasium-maven-plugin.json"
+    ],
+    "package_managers": [
+      {
+        "name": "Maven",
+        "url": "http://maven.apache.org"
+      }
+    ]
+  },
+  {
     "name": "Gemfile",
     "filenames": [
       "Gemfile",
