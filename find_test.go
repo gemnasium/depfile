@@ -4,28 +4,32 @@ import "testing"
 
 func TestFind(t *testing.T) {
 
-	t.Run("Canonical", func(t *testing.T) {
-		var fnames = []string{
-			"requirements.txt",
-			"package.json",
-			"package-lock.json",
-			"npm-shrinkwrap.json",
-			"composer.json",
-			"composer.lock",
-			"Gemfile",
-			"Gemfile.lock",
-			"bower.json",
-			"yarn.lock",
-			"pom.xml",
+	var check = func(query string, want string, got *DepFile) {
+		if got == nil {
+			t.Errorf("Expected %s to resolve to %s but got nil", query, want)
+		} else if got.Name != want {
+			t.Errorf("Expected %s to resolve to %s but got %v", query, want, got.Name)
 		}
+	}
 
+	var fnames = []string{
+		"requirements.txt",
+		"package.json",
+		"package-lock.json",
+		"npm-shrinkwrap.json",
+		"composer.json",
+		"composer.lock",
+		"Gemfile",
+		"Gemfile.lock",
+		"bower.json",
+		"yarn.lock",
+		"pom.xml",
+	}
+
+	t.Run("Canonical", func(t *testing.T) {
 		for _, fname := range fnames {
 			got := Find(fname)
-			if got == nil {
-				t.Errorf("Expected %s to resolve to %s but got nil", fname, fname)
-			} else if got.Name != fname {
-				t.Errorf("Expected %s to resolve to %s but got %v", fname, fname, got.Name)
-			}
+			check(fname, fname, got)
 		}
 	})
 
@@ -66,11 +70,7 @@ func TestFind(t *testing.T) {
 		for _, tc := range tcs {
 			for _, q := range tc.Queries {
 				got := Find(q)
-				if got == nil {
-					t.Errorf("Expected %s to resolve to %s but got nil", q, tc.Result)
-				} else if got.Name != tc.Result {
-					t.Errorf("Expected %s to resolve to %s but got %v", q, tc.Result, got.Name)
-				}
+				check(q, tc.Result, got)
 			}
 		}
 	})
