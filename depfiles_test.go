@@ -97,23 +97,10 @@ var jsonDepFiles string = `[
     ]
   },
   {
-    "name": "npm-shrinkwrap.json",
-    "filenames": [
-      "npm-shrinkwrap.json"
-    ],
-    "url": "https://docs.npmjs.com/files/shrinkwrap.json",
-    "package_type": "npm",
-    "package_managers": [
-      {
-        "name": "npm",
-        "url": "https://www.npmjs.com"
-      }
-    ]
-  },
-  {
     "name": "package-lock.json",
     "filenames": [
-      "package-lock.json"
+      "package-lock.json",
+      "npm-shrinkwrap.json"
     ],
     "url": "https://docs.npmjs.com/files/package-lock.json",
     "package_type": "npm",

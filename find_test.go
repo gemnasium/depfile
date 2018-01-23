@@ -19,7 +19,6 @@ func TestFind(t *testing.T) {
 		"requirements.txt",
 		"package.json",
 		"package-lock.json",
-		"npm-shrinkwrap.json",
 		"composer.json",
 		"composer.lock",
 		"Gemfile",
@@ -75,6 +74,12 @@ func TestFind(t *testing.T) {
 					"gems.locked",
 				},
 				Result: "Gemfile.lock",
+			},
+			{
+				Queries: []string{
+					"npm-shrinkwrap.json",
+				},
+				Result: "package-lock.json",
 			},
 		}
 

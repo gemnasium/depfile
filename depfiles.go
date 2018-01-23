@@ -100,21 +100,10 @@ var DepFiles = []DepFile{
 	},
 
 	{
-		Name: "npm-shrinkwrap.json",
-		Filenames: []string{
-			"npm-shrinkwrap.json",
-		},
-		URL:         "https://docs.npmjs.com/files/shrinkwrap.json",
-		PackageType: pkgTypeNpm,
-		PackageManagers: []PackageManager{
-			pmNpm,
-		},
-	},
-
-	{
 		Name: "package-lock.json",
 		Filenames: []string{
 			"package-lock.json",
+			"npm-shrinkwrap.json",
 		},
 		URL:         "https://docs.npmjs.com/files/package-lock.json",
 		PackageType: pkgTypeNpm,
