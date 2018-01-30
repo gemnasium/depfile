@@ -184,6 +184,20 @@ var jsonDepFiles string = `[
         "url": "https://pip.pypa.io/en/stable/"
       }
     ]
+  },
+  {
+    "name": "pipdeptree.json",
+    "filenames": [
+      "pipdeptree.json"
+    ],
+    "url": "https://github.com/naiquevin/pipdeptree",
+    "package_type": "pypi",
+    "package_managers": [
+      {
+        "name": "pip",
+        "url": "https://pip.pypa.io/en/stable/"
+      }
+    ]
   }
 ]`
 

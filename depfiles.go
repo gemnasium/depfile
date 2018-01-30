@@ -179,6 +179,16 @@ var DepFiles = []DepFile{
 		},
 	},
 
-	// TODO: https://github.com/naiquevin/pipdeptree
-
+	// JSON output of pipdeptree
+	{
+		Name: "pipdeptree.json",
+		Filenames: []string{
+			"pipdeptree.json",
+		},
+		URL:         "https://github.com/naiquevin/pipdeptree",
+		PackageType: pkgTypePypi,
+		PackageManagers: []PackageManager{
+			pmPip,
+		},
+	},
 }
